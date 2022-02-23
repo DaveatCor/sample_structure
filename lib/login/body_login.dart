@@ -17,35 +17,38 @@ class LoginBody extends StatelessWidget {
         // the App.build method, and use it to set our appbar title.
         title: Text("My app"),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ElevatedButton(
-            onPressed: (){
-              validateEmail!("email");
-            }, 
-            child: Text("validateEmail")
-          ),
-          ElevatedButton(
-            onPressed: (){
-              validateEmail!("Phone");
-            }, 
-            child: Text("validatePhone")
-          ),
-          ElevatedButton(
-            onPressed: (){
-              validateEmail!("Pass");
-            }, 
-            child: Text("validatePassword")
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              await validateEmail!();
-            }, 
-            child: Text("Login")
-          )
-        ],
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: (){
+                validateEmail!("email");
+              }, 
+              child: Text("validateEmail")
+            ),
+            ElevatedButton(
+              onPressed: (){
+                validatePhoneNumber!("Phone");
+              }, 
+              child: Text("validatePhone")
+            ),
+            ElevatedButton(
+              onPressed: (){
+                validatePassword!("Pass");
+              }, 
+              child: Text("validatePassword")
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                await login!();
+              }, 
+              child: Text("Login")
+            )
+          ],
+        )
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

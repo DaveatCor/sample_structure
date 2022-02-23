@@ -30,12 +30,12 @@ class _LoginState extends State<Login> {
       
     }); 
   }
-  Future<void>? login(){
+  Future<void> login() async {
     print("Hello login");
     setState(() {
       
     }); 
-    return null;
+    await Future.delayed(Duration(seconds: 1), (){});
   }
 
   @override
